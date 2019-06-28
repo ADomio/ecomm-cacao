@@ -24,9 +24,19 @@ $ npm install
 
 In **/ecomm-cacao**, you can run:
 
-_Running app in development:_
+_Install app client dependencies:_
 ```
-$ npm run dev
+$ npm run view-install
+```
+
+_Running app server in development:_
+```
+$ npm run server
+```
+
+_Running app client in development:_
+```
+$ npm run view
 ```
 
 ## Tools
