@@ -46,10 +46,16 @@ module.exports.createProduct = (req, res) => {
 
 module.exports.allProducts = (req, res) => {
     const error = {};
+<<<<<<< HEAD
 
     Product.find()
         .then(products => {
             if(!products.length) {                
+=======
+    Product.find()
+        .then(products => {
+            if(!products.length) {
+>>>>>>> 9224257... documentation: products api
                 error.noProducts = 'No products found';
                 return res.status(404).json({
                     success: false,
@@ -57,7 +63,10 @@ module.exports.allProducts = (req, res) => {
                 })
             }                        
 
-            res.status(200).json(products);
+            res.status(200).json({
+                success: true, 
+                products
+            });
         })
         .catch(err => {
             error.noProducts = 'No products found';
@@ -84,7 +93,11 @@ module.exports.delById = (req, res) => {
 
             res.status(200).json({
                 success: true,
+<<<<<<< HEAD
                 error
+=======
+                deletedProduct: product
+>>>>>>> 9224257... documentation: products api
             });
         })
         .catch(err => {
@@ -133,10 +146,15 @@ module.exports.modifyById = (req, res) => {
             }
 
             Product.findByIdAndUpdate(id, modifiedProduct)
+<<<<<<< HEAD
                 .then(newProduct => {
                     res.status(200).json({
+=======
+                .then(updatedProduct => {
+                    res.status(200).json( {
+>>>>>>> 9224257... documentation: products api
                         success: true,
-                        modifiedProduct
+                        updatedProduct
                     })
                 })
                 .catch(err => { 
