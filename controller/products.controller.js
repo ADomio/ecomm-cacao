@@ -46,16 +46,13 @@ module.exports.createProduct = (req, res) => {
 
 module.exports.allProducts = (req, res) => {
     const error = {};
-<<<<<<< HEAD
-
-    Product.find()
-        .then(products => {
-            if(!products.length) {                
-=======
     Product.find()
         .then(products => {
             if(!products.length) {
+<<<<<<< HEAD
 >>>>>>> 9224257... documentation: products api
+=======
+>>>>>>> de1d0bc... Crash commit
                 error.noProducts = 'No products found';
                 return res.status(404).json({
                     success: false,
@@ -93,11 +90,11 @@ module.exports.delById = (req, res) => {
 
             res.status(200).json({
                 success: true,
-<<<<<<< HEAD
-                error
-=======
                 deletedProduct: product
+<<<<<<< HEAD
 >>>>>>> 9224257... documentation: products api
+=======
+>>>>>>> de1d0bc... Crash commit
             });
         })
         .catch(err => {
@@ -146,13 +143,12 @@ module.exports.modifyById = (req, res) => {
             }
 
             Product.findByIdAndUpdate(id, modifiedProduct)
-<<<<<<< HEAD
-                .then(newProduct => {
-                    res.status(200).json({
-=======
                 .then(updatedProduct => {
                     res.status(200).json( {
+<<<<<<< HEAD
 >>>>>>> 9224257... documentation: products api
+=======
+>>>>>>> de1d0bc... Crash commit
                         success: true,
                         updatedProduct
                     })
